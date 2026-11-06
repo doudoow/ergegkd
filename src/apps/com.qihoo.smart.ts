@@ -1,0 +1,44 @@
+// @ts-nocheck
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
+  "name": "360智慧生活",
+  "id": "com.qihoo.smart",
+  "groups": [
+    {
+      "name": "局部广告-云录像会员广告",
+      "desc": "点击关闭",
+      "key": 0,
+      "rules": [
+        {
+          "matches": "@View[id=\"root\"][visibleToUser=true] > View > [text^=\"服务时间\"] +6 [desc=\"支付宝\"]",
+          "position": {
+            "left": "width * 0.9402",
+            "top": "width * 0.0590"
+          },
+          "activityIds": "com.qihoo.main.flutter.SmartHomeFlutterActivity",
+          "snapshotUrls": "https://i.gkd.li/i/18354637",
+          "exampleUrls": "https://e.gkd.li/1106858a-bb22-4583-b238-fe270733b5fe",
+          "key": 0
+        }
+      ]
+    },
+    {
+      "name": "更新提示",
+      "matchTime": 10000,
+      "actionMaximum": 1,
+      "resetMatch": "app",
+      "key": 1,
+      "rules": [
+        {
+          "matches": "[vid=\"sh_app_upgrade_dialog_close\"][visibleToUser=true]",
+          "activityIds": "com.qihoo.main.flutter.SmartHomeFlutterActivity",
+          "fastQuery": true,
+          "snapshotUrls": "https://i.gkd.li/i/19499314",
+          "exampleUrls": "https://e.gkd.li/19a460f5-5fe0-41b1-8def-65e23804a8fd",
+          "key": 0
+        }
+      ]
+    }
+  ]
+});

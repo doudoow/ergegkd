@@ -1,0 +1,31 @@
+// @ts-nocheck
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
+  "name": "车e兴",
+  "id": "com.anshibo.activity",
+  "groups": [
+    {
+      "name": "开屏广告",
+      "matchTime": 10000,
+      "actionMaximum": 1,
+      "resetMatch": "app",
+      "priorityTime": 10000,
+      "fastQuery": true,
+      "order": -10,
+      "key": 0,
+      "rules": [
+        {
+          "anyMatches": [
+            "@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"][visibleToUser=true]",
+            "FrameLayout > FrameLayout[childCount>2][text=null][desc=null] > @View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0][visibleToUser=true]"
+          ],
+          "snapshotUrls": "https://i.gkd.li/i/18046569",
+          "excludeSnapshotUrls": "https://i.gkd.li/i/18047812",
+          "exampleUrls": "https://e.gkd.li/7f58925f-39dd-40c3-a8f1-f6e5268eced4",
+          "key": 0
+        }
+      ]
+    }
+  ]
+});

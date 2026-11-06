@@ -1,0 +1,44 @@
+// @ts-nocheck
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
+  "name": "爱其意",
+  "id": "com.taitedi.hdd.ayi",
+  "groups": [
+    {
+      "name": "通知提示-首页通知弹窗",
+      "desc": "点击[我知道了]",
+      "matchTime": 10000,
+      "actionMaximum": 1,
+      "resetMatch": "app",
+      "key": 0,
+      "rules": [
+        {
+          "matches": "[desc=\"我知道了\"][visibleToUser=true]",
+          "activityIds": ".MainActivity",
+          "snapshotUrls": "https://i.gkd.li/i/18261037",
+          "exampleUrls": "https://e.gkd.li/12550205-943e-4e8b-b26a-ebd6ce3f006a",
+          "key": 0
+        }
+      ]
+    },
+    {
+      "name": "全屏广告-弹窗广告",
+      "desc": "点击关闭",
+      "matchTime": 10000,
+      "actionMaximum": 1,
+      "resetMatch": "app",
+      "key": 1,
+      "rules": [
+        {
+          "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null][parent.childCount>3] <n FrameLayout >(2,3) [text^=\"立即\" || text$=\"详情\" || text^=\"了解\" || text=\"去微信看看\" || text$=\"应用\" || text=\"进入小程序\" || text=\"领取优惠\" || text=\"跳转微信\"]",
+          "activityIds": ".MainActivity",
+          "fastQuery": true,
+          "snapshotUrls": "https://i.gkd.li/i/18285341",
+          "exampleUrls": "https://e.gkd.li/8ea7b6ad-8e5b-4b96-bbac-ec5b7196ddbb",
+          "key": 0
+        }
+      ]
+    }
+  ]
+});

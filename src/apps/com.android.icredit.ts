@@ -1,0 +1,51 @@
+// @ts-nocheck
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
+  "name": "企查查",
+  "id": "com.android.icredit",
+  "groups": [
+    {
+      "name": "全屏广告-VIP弹窗",
+      "desc": "点击关闭",
+      "enable": false,
+      "matchTime": 10000,
+      "actionMaximum": 1,
+      "resetMatch": "app",
+      "fastQuery": true,
+      "key": 0,
+      "rules": [
+        {
+          "matches": "@Image[childCount=0][visibleToUser=true] <2 View < View < WebView[text$=\"限时返场\" || text=\"首单有礼\"] < WebView < LinearLayout < LinearLayout < FrameLayout < [id=\"android:id/content\"]",
+          "activityIds": "com.android.icredit.ui.MainMenuActivity",
+          "snapshotUrls": [
+            "https://i.gkd.li/i/14720494",
+            "https://i.gkd.li/i/15112280"
+          ],
+          "exampleUrls": "https://m.gkd.li/57941037/eb232325-12e4-495f-a9f3-5f853d5e66f9",
+          "key": 0
+        },
+        {
+          "matches": "[text$=\"限时返场\" || text=\"首单有礼\"] >2 View[childCount=2] > Image[visibleToUser=true]",
+          "activityIds": "com.android.icredit.ui.MainMenuActivity",
+          "snapshotUrls": [
+            "https://i.gkd.li/i/14720494",
+            "https://i.gkd.li/i/15112280"
+          ],
+          "exampleUrls": "https://m.gkd.li/57941037/eb232325-12e4-495f-a9f3-5f853d5e66f9",
+          "key": 1
+        },
+        {
+          "matches": "@Image[childCount=0][visibleToUser=true] <2 View < View < WebView[text$=\"限时返场\" || text=\"首单有礼\"] < WebView < LinearLayout < LinearLayout < FrameLayout < [id=\"android:id/content\"]",
+          "activityIds": ".ui.MainMenuActivity",
+          "snapshotUrls": [
+            "https://i.gkd.li/i/14720494",
+            "https://i.gkd.li/i/15112280"
+          ],
+          "exampleUrls": "https://m.gkd.li/57941037/eb232325-12e4-495f-a9f3-5f853d5e66f9",
+          "key": 2
+        }
+      ]
+    }
+  ]
+});

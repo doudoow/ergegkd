@@ -1,0 +1,93 @@
+// @ts-nocheck
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
+  "name": "智慧树家长端",
+  "id": "com.zhx.wisdomtree",
+  "groups": [
+    {
+      "name": "局部广告-信息流广告",
+      "desc": "点击关闭",
+      "key": 0,
+      "rules": [
+        {
+          "matches": "[vid=\"iv_close_ad\"][visibleToUser=true]",
+          "activityIds": "net.hyww.wisdomtree.parent.common.MainActivity",
+          "fastQuery": true,
+          "key": 0,
+          "snapshotUrls": "https://i.gkd.li/i/20062093",
+          "exampleUrls": "https://e.gkd.li/82c2a85d-1007-45e2-abed-3c5933563a92"
+        },
+        {
+          "matches": "[vid=\"tv_close_ad\"][visibleToUser=true]",
+          "activityIds": "net.hyww.wisdomtree.parent.common.MainActivity",
+          "fastQuery": true,
+          "key": 1,
+          "snapshotUrls": "https://i.gkd.li/i/20062094",
+          "exampleUrls": "https://e.gkd.li/486eae02-6c25-4e2a-b6a4-7997a8887eac"
+        },
+        {
+          "matches": "@[vid=\"rl_down\"] <<n [vid=\"tt_ad_view\"][visibleToUser=true]",
+          "activityIds": "net.hyww.wisdomtree.parent.common.MainActivity",
+          "fastQuery": true,
+          "key": 2,
+          "snapshotUrls": "https://i.gkd.li/i/20074571",
+          "exampleUrls": "https://e.gkd.li/46522b87-512c-47ab-9a57-c333eca6a789"
+        },
+        {
+          "matches": "FrameLayout[childCount=1] > FrameLayout[childCount=5] > FrameLayout[childCount=1] > @ImageView[id=null][text=null][width<50 && height<50] <<n [vid=\"fl_csj_banner_view\"][visibleToUser=true]",
+          "activityIds": "net.hyww.wisdomtree.core.act.FragmentSingleAct",
+          "fastQuery": true,
+          "key": 3,
+          "snapshotUrls": "https://i.gkd.li/i/20074641",
+          "exampleUrls": "https://e.gkd.li/ee6796d4-ba24-4d34-8ef2-07969d102715"
+        }
+      ]
+    },
+    {
+      "name": "全屏广告-弹窗广告",
+      "desc": "点击关闭",
+      "key": 1,
+      "rules": [
+        {
+          "matches": "@View[childCount=1][visibleToUser=true] < View[childCount=1][visibleToUser=true] + View[childCount=1][visibleToUser=true] > [text=\"反馈\"]",
+          "activityIds": "com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity",
+          "key": 0,
+          "snapshotUrls": "https://i.gkd.li/i/20074568",
+          "exampleUrls": "https://e.gkd.li/708daddf-5d9b-4cc9-977f-ba48c3f33ba3"
+        },
+        {
+          "matches": "@Image[childCount=0][text=\"\"][width<60 && height<60] < View[childCount=1] + View +n View > View[childCount=1] > TextView[text$=\"广告\"]",
+          "activityIds": "com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity",
+          "key": 1,
+          "snapshotUrls": "https://i.gkd.li/i/20095481",
+          "exampleUrls": "https://e.gkd.li/f6c1c4ec-56d8-4c02-a66d-42a005bb196c"
+        },
+        {
+          "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null] <2 FrameLayout[childCount=5] + FrameLayout[childCount=2] > [text^=\"立即\" || text$=\"详情\" || text^=\"了解\" || text=\"去逛逛\" || text=\"去微信看看\" || text$=\"应用\" || text=\"进入小程序\" || text=\"领取优惠\" || text=\"跳转微信\"]",
+          "activityIds": "net.hyww.wisdomtree.parent.common.MainActivity",
+          "fastQuery": true,
+          "key": 2,
+          "snapshotUrls": "https://i.gkd.li/i/20154496",
+          "exampleUrls": "https://e.gkd.li/c72c44bc-a16a-4929-8aa6-457893c1254f"
+        },
+        {
+          "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null][parent.childCount>3] <n FrameLayout >(2,3) [text^=\"立即\" || text$=\"详情\" || text^=\"了解\" || text=\"去微信看看\" || text$=\"应用\" || text=\"进入小程序\" || text=\"领取优惠\" || text=\"跳转微信\"]",
+          "activityIds": "net.hyww.wisdomtree.parent.common.MainActivity",
+          "fastQuery": true,
+          "key": 3,
+          "snapshotUrls": "https://i.gkd.li/i/20154499",
+          "exampleUrls": "https://e.gkd.li/91f3f0d3-d424-4e06-99a2-8e31dd71df41"
+        },
+        {
+          "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null] - FrameLayout[childCount>2] >3 [text^=\"立即\" || text$=\"应用\" || text=\"了解更多\" || text=\"查看详情\"]",
+          "activityIds": "net.hyww.wisdomtree.parent.common.MainActivity",
+          "fastQuery": true,
+          "key": 4,
+          "snapshotUrls": "https://i.gkd.li/i/20154500",
+          "exampleUrls": "https://e.gkd.li/c24edc78-83d6-4a73-a555-fd69635a92b8"
+        }
+      ]
+    }
+  ]
+});

@@ -1,4 +1,4 @@
 import { updateDist } from '@gkd-kit/tools';
-import subscription from './check';
+import subscription from '../src/subscription';
 
 await updateDist(subscription);

@@ -1,0 +1,107 @@
+// @ts-nocheck
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
+  "name": "正气",
+  "id": "com.zhengnengliang.precepts",
+  "groups": [
+    {
+      "name": "全屏广告-弹窗广告",
+      "desc": "点击关闭",
+      "key": 0,
+      "rules": [
+        {
+          "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null] <(2,3) FrameLayout[childCount=4] +(1,2) FrameLayout[childCount=2] >2 [text^=\"立即\" || text=\"去逛逛\"]",
+          "activityIds": [
+            "com.zhengnengliang.precepts.ui.activity.MainActivity",
+            "com.zhengnengliang.precepts.ui.dialog.DialogTwoButton"
+          ],
+          "fastQuery": true,
+          "key": 0,
+          "snapshotUrls": [
+            "https://i.gkd.li/i/12739767",
+            "https://i.gkd.li/i/12727705"
+          ],
+          "exampleUrls": "https://e.gkd.li/9b352715-611f-4fa3-a66e-cf9203dddf75"
+        },
+        {
+          "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null][parent.childCount>3] <n FrameLayout >(2,3) [text^=\"立即\" || text$=\"详情\" || text^=\"了解\" || text=\"去微信看看\" || text$=\"应用\" || text=\"进入小程序\" || text=\"领取优惠\" || text=\"跳转微信\"]",
+          "activityIds": ".ui.activity.MainActivity",
+          "fastQuery": true,
+          "key": 1,
+          "snapshotUrls": "https://i.gkd.li/i/14338307",
+          "exampleUrls": "https://e.gkd.li/5813656b-8d39-4c14-b459-038fa41366a3"
+        },
+        {
+          "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null] <(2,3) FrameLayout[childCount=4] +(1,2) FrameLayout[childCount=2] >2 [text^=\"立即\" || text=\"去逛逛\"]",
+          "activityIds": [
+            ".ui.activity.MainActivity",
+            ".ui.dialog.DialogTwoButton"
+          ],
+          "fastQuery": true,
+          "key": 2,
+          "snapshotUrls": [
+            "https://i.gkd.li/i/12739767",
+            "https://i.gkd.li/i/12727705"
+          ],
+          "exampleUrls": "https://e.gkd.li/9b352715-611f-4fa3-a66e-cf9203dddf75"
+        }
+      ]
+    },
+    {
+      "name": "未分类-第三方 SDK 广告",
+      "enable": false,
+      "key": 1,
+      "rules": [
+        {
+          "matches": "[text=\"点此去广告\"] + ImageButton[clickable=true]",
+          "key": 0
+        }
+      ]
+    },
+    {
+      "name": "更新提示",
+      "enable": false,
+      "key": 2,
+      "rules": [
+        {
+          "matches": "@[text=\"取消\"] +2 [text=\"升级\"]",
+          "key": 0
+        }
+      ]
+    },
+    {
+      "name": "全屏广告-第三方 SDK 广告",
+      "enable": false,
+      "key": 3,
+      "rules": [
+        {
+          "matches": "[text=\"点此去广告\"] + ImageButton[clickable=true]",
+          "key": 0
+        }
+      ]
+    },
+    {
+      "name": "更新弹窗",
+      "enable": false,
+      "key": 4,
+      "rules": [
+        {
+          "matches": "@[text=\"取消\"] +2 [text=\"升级\"]",
+          "key": 0
+        }
+      ]
+    },
+    {
+      "name": "第三方 SDK 广告",
+      "enable": false,
+      "key": 5,
+      "rules": [
+        {
+          "matches": "[text=\"点此去广告\"] + ImageButton[clickable=true]",
+          "key": 0
+        }
+      ]
+    }
+  ]
+});

@@ -1,0 +1,26 @@
+// @ts-nocheck
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
+  "name": "京东云无线宝",
+  "id": "com.jdcloud.mt.smartrouter",
+  "groups": [
+    {
+      "name": "全屏广告-弹窗广告",
+      "desc": "点击关闭",
+      "matchTime": 10000,
+      "actionMaximum": 1,
+      "resetMatch": "app",
+      "key": 0,
+      "rules": [
+        {
+          "matches": "[vid=\"iv_close\"][clickable=true]",
+          "fastQuery": true,
+          "snapshotUrls": "https://i.gkd.li/i/14432168",
+          "exampleUrls": "https://m.gkd.li/57941037/26521f31-ee9b-4bab-8275-fab75a76c96e",
+          "key": 0
+        }
+      ]
+    }
+  ]
+});
