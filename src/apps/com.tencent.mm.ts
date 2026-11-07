@@ -270,34 +270,6 @@ export default defineGkdApp({
           "excludeSnapshotUrls": "https://i.gkd.li/i/28927197"
         },
         {
-          "matches": "[parent=null]",
-          "action": "back",
-          "actionDelay": 50,
-          "preKeys": [
-            22
-          ],
-          "activityIds": [],
-          "excludeActivityIds": [
-            ".plugin.sns.ui.SnsTimeLineUI",
-            ".plugin.sns.ui.improve.ImproveSnsTimelineUI",
-            ".plugin.profile.ui.ContactInfoUI"
-          ],
-          "matchRoot": true,
-          "fastQuery": true,
-          "key": 19,
-          "name": "⑤误触后-按[返回键]"
-        },
-        {
-          "matches": "@LinearLayout[clickable=true] > [text=\"取消\"]",
-          "preKeys": [
-            22
-          ],
-          "fastQuery": true,
-          "key": 20,
-          "name": "⑤误触右上角-点击[取消]",
-          "snapshotUrls": "https://i.gkd.li/i/27366025"
-        },
-        {
           "matches": "ImageView - TextView[text=\"广告\"][clickable=true][id!=null]",
           "key": 21,
           "name": "点击广告卡片右上角",
@@ -323,7 +295,9 @@ export default defineGkdApp({
           "name": "关闭该广告的原因-点击[直接关闭]",
           "snapshotUrls": [
             "https://i.gkd.li/import/12663984"
-          ]
+          ],
+          "action": "clickCenter",
+          "actionDelay": 300
         },
         {
           "matches": "TextView[text^=\"关闭\"][text$=\"广告\"][clickable=true]",
@@ -981,7 +955,9 @@ export default defineGkdApp({
           "key": 2,
           "name": "点击[确定]",
           "snapshotUrls": "https://i.gkd.li/i/14436190",
-          "exampleUrls": "https://m.gkd.li/57941037/590eb619-9987-4edf-98a8-17146ffeda10"
+          "exampleUrls": "https://m.gkd.li/57941037/590eb619-9987-4edf-98a8-17146ffeda10",
+          "action": "clickCenter",
+          "actionDelay": 300
         }
       ]
     },
@@ -1078,7 +1054,9 @@ export default defineGkdApp({
             1
           ],
           "key": 2,
-          "snapshotUrls": "https://i.gkd.li/i/14549567"
+          "snapshotUrls": "https://i.gkd.li/i/14549567",
+          "action": "clickCenter",
+          "actionDelay": 300
         }
       ]
     },
@@ -1231,7 +1209,9 @@ export default defineGkdApp({
             "https://i.gkd.li/i/16796732",
             "https://i.gkd.li/i/16798658",
             "https://i.gkd.li/i/15198461"
-          ]
+          ],
+          "action": "clickCenter",
+          "actionDelay": 300
         }
       ]
     },

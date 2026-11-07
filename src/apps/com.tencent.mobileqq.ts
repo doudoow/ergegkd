@@ -41,7 +41,11 @@ export default defineGkdApp({
         {
           "matches": "TextView[text^=\"跳过\"][text.length<=10][vid!=\"title\"]",
           "excludeMatches": "[vid=\"chat_item_content_layout\"]",
-          "key": 1
+          "key": 1,
+          "excludeActivityIds": [
+            "com.tencent.mobileqq.activity.ChatActivity",
+            "com.tencent.mobileqq.search.activity.UniteSearchActivity"
+          ]
         },
         {
           "matches": "TextView[text^=\"跳过\"][text.length<=10][vid!=\"title\"]",
@@ -57,7 +61,11 @@ export default defineGkdApp({
             "https://i.gkd.li/i/14341023",
             "https://i.gkd.li/i/15334565"
           ],
-          "key": 2
+          "key": 2,
+          "excludeActivityIds": [
+            "com.tencent.mobileqq.activity.ChatActivity",
+            "com.tencent.mobileqq.search.activity.UniteSearchActivity"
+          ]
         }
       ]
     },
@@ -596,7 +604,8 @@ export default defineGkdApp({
           ],
           "exampleUrls": "https://m.gkd.li/57941037/4cf5bc02-d2c3-4ca4-833e-522a194e3131"
         }
-      ]
+      ],
+      "enable": false
     },
     {
       "name": "功能类-自动领取群聊红包",
