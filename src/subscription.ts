@@ -6,9 +6,9 @@ import globalGroups from './globalGroups';
 
 export default defineGkdSubscription({
   id: 61002,
-  name: "LittleGKD 全网合订本",
-  version: 1794001433,
-  author: "Little Code Sauce · 合并 AIsouler/Adpro/aoguai/Lin-arm/ganlin/MengNianxiaoyao/官方",
+  name: "鸡哥的订阅",
+  version: 101,
+  author: "鸡哥",
   updateUrl: "",
   supportUri: "https://gkd.li/",
   categories,
