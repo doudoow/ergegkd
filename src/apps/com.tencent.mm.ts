@@ -2756,40 +2756,42 @@ export default defineGkdApp({
       "name": "分段广告-朋友圈广告-关闭浮层",
       "enable": true,
       "desc": "朋友圈广告：点[关闭该广告] -> 点[直接关闭]，只处理浮层按钮，不点击广告卡片本身",
-      "fastQuery": true,
       "rules": [
         {
           "key": 0,
           "name": "点[关闭该广告]",
           "action": "clickCenter",
-          "actionDelay": 200,
+          "actionDelay": 400,
           "matches": "[text=\"关闭该广告\"][visibleToUser=true]"
         },
         {
           "key": 1,
           "name": "点[直接关闭]",
-          "action": "clickCenter",
-          "actionDelay": 200,
-          "preKeys": [
-            0
-          ],
-          "matches": "[text=\"直接关闭\"][visibleToUser=true]"
+          "action": "click",
+          "actionDelay": 600,
+          "anyMatches": [
+            "[text=\"直接关闭\"][visibleToUser=true]",
+            "[text=\"关闭该广告的原因\"] +(2) [text=\"直接关闭\"]",
+            "[text=\"关闭该广告的原因\"] -(2) [text=\"直接关闭\"]",
+            "@[clickable=true] > [text=\"直接关闭\"]"
+          ]
         },
         {
           "key": 2,
           "name": "点[关闭广告]",
           "action": "clickCenter",
-          "actionDelay": 200,
+          "actionDelay": 400,
           "matches": "[text=\"关闭广告\"||text=\"Close\"][visibleToUser=true][clickable=true]"
         },
         {
           "key": 3,
           "name": "点[广告-关闭x]",
           "action": "clickCenter",
-          "actionDelay": 200,
+          "actionDelay": 400,
           "matches": "TextView[text=\"广告\"][clickable=true] <2 * > [text=\"关闭\"][visibleToUser=true]"
         }
-      ]
+      ],
+      "actionDelay": 600
     }
   ]
 });
