@@ -319,7 +319,6 @@ export default defineGkdApp({
         },
         {
           "matches": "[text=\"关闭该广告的原因\"] +(2) [text=\"直接关闭\"]",
-          "preKeys": 22,
           "key": 23,
           "name": "关闭该广告的原因-点击[直接关闭]",
           "snapshotUrls": [

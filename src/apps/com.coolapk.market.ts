@@ -597,10 +597,6 @@ export default defineGkdApp({
           "matches": [
             "@LinearLayout > TextView[text=\"不感兴趣\"]"
           ],
-          "preKeys": [
-            0,
-            1
-          ],
           "key": 2,
           "name": "选择关闭原因-点击不感兴趣",
           "snapshotUrls": [
