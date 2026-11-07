@@ -282,12 +282,13 @@ export default defineGkdApp({
         },
         {
           "matches": "@LinearLayout[clickable=true][childCount=2] > [text=\"关闭该广告\"]",
-          "preKeys": 0,
           "key": 22,
           "name": "你觉得这条广告怎么样-点击[关闭该广告]",
           "snapshotUrls": [
             "https://i.gkd.li/import/12642584"
-          ]
+          ],
+          "action": "clickCenter",
+          "actionDelay": 300
         },
         {
           "matches": "[text=\"关闭该广告的原因\"] +(2) [text=\"直接关闭\"]",
@@ -304,13 +305,21 @@ export default defineGkdApp({
         },
         {
           "matches": "TextView[text^=\"关闭\"][text$=\"广告\"][clickable=true]",
-          "preKeys": 0,
           "key": 24,
           "name": "广告反馈-点击[关闭该广告]",
           "snapshotUrls": [
             "https://i.gkd.li/import/12907642",
             "https://i.gkd.li/import/13926578"
-          ]
+          ],
+          "action": "clickCenter",
+          "actionDelay": 300
+        },
+        {
+          "key": 25,
+          "name": "关闭该广告-兜底",
+          "action": "clickCenter",
+          "actionDelay": 300,
+          "matches": "@LinearLayout[clickable=true] > [text=\"关闭该广告\"][visibleToUser=true]"
         }
       ]
     },

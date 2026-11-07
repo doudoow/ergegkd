@@ -154,11 +154,9 @@ export default defineGkdApp({
         {
           "anyMatches": [
             "@[clickable=true] >(1,2) [text=\"不感兴趣\"][visibleToUser=true]",
-            "[text=\"不感兴趣\"][clickable=true][visibleToUser=true]"
-          ],
-          "preKeys": [
-            0,
-            2
+            "[text=\"不感兴趣\"][clickable=true][visibleToUser=true]",
+            "@[clickable=true] >(1,2) [text*=\"不感兴趣\"][visibleToUser=true]",
+            "[text*=\"不感兴趣\"][visibleToUser=true]"
           ],
           "key": 1,
           "snapshotUrls": [
@@ -173,10 +171,6 @@ export default defineGkdApp({
         },
         {
           "matches": "[text=\"不感兴趣\"][clickable=true][visibleToUser=true]",
-          "preKeys": [
-            0,
-            1
-          ],
           "key": 2,
           "snapshotUrls": "https://i.gkd.li/i/21036817",
           "action": "clickCenter",
