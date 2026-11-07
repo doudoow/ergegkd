@@ -175,6 +175,13 @@ export default defineGkdApp({
           "snapshotUrls": "https://i.gkd.li/i/21036817",
           "action": "clickCenter",
           "actionDelay": 300
+        },
+        {
+          "key": 3,
+          "name": "不感兴趣-兜底",
+          "action": "clickCenter",
+          "actionDelay": 300,
+          "matches": "[text*=\"不感兴趣\"][visibleToUser=true]"
         }
       ]
     },
