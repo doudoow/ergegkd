@@ -1,0 +1,30 @@
+name: purge_cdn
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge jsDelivr cache
+        run: |
+          for path in "dist/gkd.json5" "dist/gkd.version.json5" "dist/README.md"; do
+            for ref in "@main" ""; do
+              url="https://purge.jsdelivr.net/gh/doudoow/ergegkd${ref}/${path}"
+              echo "purge ${url}"
+              curl -s -m 30 "${url}" || true
+              echo
+            done
+          done
+          echo "等待 jsDelivr 刷新"
+          sleep 20
+          echo "--- 校验 ---"
+          curl -s -m 30 "https://cdn.jsdelivr.net/gh/doudoow/ergegkd@main/dist/gkd.version.json5"; echo
+          curl -s -m 30 "https://cdn.jsdelivr.net/gh/doudoow/ergegkd/dist/gkd.version.json5"; echo
