@@ -297,7 +297,10 @@ export default defineGkdApp({
             "https://i.gkd.li/import/12663984"
           ],
           "action": "clickCenter",
-          "actionDelay": 300
+          "actionDelay": 300,
+          "preKeys": [
+            22
+          ]
         },
         {
           "matches": "TextView[text^=\"关闭\"][text$=\"广告\"][clickable=true]",
@@ -1196,7 +1199,9 @@ export default defineGkdApp({
           "excludeSnapshotUrls": [
             "https://i.gkd.li/i/15061424",
             "https://i.gkd.li/i/16796729"
-          ]
+          ],
+          "action": "clickCenter",
+          "actionDelay": 300
         },
         {
           "matches": "[text=\"与我无关\"][visibleToUser=true]",

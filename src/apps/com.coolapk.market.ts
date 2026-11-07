@@ -169,22 +169,16 @@ export default defineGkdApp({
             "https://i.gkd.li/i/20776872",
             "https://i.gkd.li/i/21693916",
             "https://i.gkd.li/i/23046625"
-          ],
-          "action": "clickCenter",
-          "actionDelay": 300
+          ]
         },
         {
+          "matches": "[text=\"不感兴趣\"][clickable=true][visibleToUser=true]",
           "preKeys": [
             0,
             1
           ],
           "key": 2,
           "snapshotUrls": "https://i.gkd.li/i/21036817",
-          "anyMatches": [
-            "@[clickable=true] >(1,2) [text=\"不感兴趣\"][visibleToUser=true]",
-            "[text=\"不感兴趣\"][clickable=true][visibleToUser=true]",
-            "[text=\"不感兴趣\"][visibleToUser=true]"
-          ],
           "action": "clickCenter",
           "actionDelay": 300
         }
@@ -330,9 +324,7 @@ export default defineGkdApp({
             "https://i.gkd.li/i/12655713",
             "https://i.gkd.li/i/12660759",
             "https://i.gkd.li/i/12706437"
-          ],
-          "action": "clickCenter",
-          "actionDelay": 300
+          ]
         },
         {
           "matches": "TextView[text!=\"编辑\"] + [vid=\"close_view\"][childCount=0]",
@@ -404,9 +396,7 @@ export default defineGkdApp({
             "https://i.gkd.li/i/19643262",
             "https://i.gkd.li/i/19534649",
             "https://i.gkd.li/i/20776872"
-          ],
-          "action": "clickCenter",
-          "actionDelay": 300
+          ]
         }
       ]
     },
@@ -617,9 +607,7 @@ export default defineGkdApp({
             "https://i.gkd.li/import/12660759",
             "https://i.gkd.li/import/12706437",
             "https://i.gkd.li/import/13786886"
-          ],
-          "action": "clickCenter",
-          "actionDelay": 300
+          ]
         }
       ]
     },
