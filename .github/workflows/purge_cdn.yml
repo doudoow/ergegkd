@@ -13,18 +13,46 @@ jobs:
   purge:
     runs-on: ubuntu-latest
     steps:
-      - name: Purge jsDelivr cache
+      - name: Purge jsDelivr cache (with throttle retry)
         run: |
-          for path in "dist/gkd.json5" "dist/gkd.version.json5" "dist/README.md"; do
-            for ref in "@main" ""; do
-              url="https://purge.jsdelivr.net/gh/doudoow/ergegkd${ref}/${path}"
-              echo "purge ${url}"
-              curl -s -m 30 "${url}" || true
-              echo
+          set -u
+          purge_one() {
+            local url="$1"
+            for attempt in 1 2 3 4 5 6 7 8; do
+              echo "== attempt ${attempt}: ${url}"
+              local resp
+              resp=$(curl -s -m 40 "${url}" || true)
+              echo "${resp}"
+              if echo "${resp}" | grep -q '"throttled": *true'; then
+                local wait
+                wait=$(echo "${resp}" | sed -n 's/.*"throttlingReset": *\([0-9]*\).*/\1/p')
+                [ -z "${wait}" ] && wait=60
+                wait=$((wait + 10))
+                [ "${wait}" -gt 600 ] && wait=600
+                echo "被限流，等待 ${wait}s 后重试"
+                sleep "${wait}"
+                continue
+              fi
+              if echo "${resp}" | grep -q '"status": *"finished"'; then
+                echo "清理成功"
+                return 0
+              fi
+              sleep 10
             done
+            echo "清理未确认完成（可能仍在限流），继续"
+            return 0
+          }
+
+          for path in "dist/gkd.json5" "dist/gkd.version.json5"; do
+            purge_one "https://purge.jsdelivr.net/gh/doudoow/ergegkd@main/${path}"
+            purge_one "https://purge.jsdelivr.net/gh/doudoow/ergegkd/${path}"
           done
-          echo "等待 jsDelivr 刷新"
-          sleep 20
-          echo "--- 校验 ---"
-          curl -s -m 30 "https://cdn.jsdelivr.net/gh/doudoow/ergegkd@main/dist/gkd.version.json5"; echo
-          curl -s -m 30 "https://cdn.jsdelivr.net/gh/doudoow/ergegkd/dist/gkd.version.json5"; echo
+
+      - name: Verify
+        run: |
+          echo "--- @main ---"
+          curl -s -m 40 "https://cdn.jsdelivr.net/gh/doudoow/ergegkd@main/dist/gkd.version.json5" || true
+          echo
+          echo "--- default branch (固定地址) ---"
+          curl -s -m 40 "https://cdn.jsdelivr.net/gh/doudoow/ergegkd/dist/gkd.version.json5" || true
+          echo
