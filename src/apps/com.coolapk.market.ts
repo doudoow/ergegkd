@@ -149,6 +149,9 @@ export default defineGkdApp({
             "https://i.gkd.li/i/15159886",
             "https://i.gkd.li/i/15587119",
             "https://i.gkd.li/i/20768037"
+          ],
+          "excludeMatches": [
+            "@[vid=\"close_view\"] <<n [vid=\"coolapk_card_view\"] >n [text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
           ]
         },
         {
