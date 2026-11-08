@@ -70,8 +70,7 @@ export default defineGkdApp({
           "excludeSnapshotUrls": "https://i.gkd.li/i/15110548",
           "excludeMatches": [
             "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
-            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
-            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+            "@[visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"||text=\"立即抢购\"][visibleToUser=true]"
           ]
         },
         {
@@ -80,8 +79,7 @@ export default defineGkdApp({
           "snapshotUrls": "https://i.gkd.li/i/13242002",
           "excludeMatches": [
             "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
-            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
-            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+            "@[visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"||text=\"立即抢购\"][visibleToUser=true]"
           ]
         },
         {
@@ -96,8 +94,7 @@ export default defineGkdApp({
           ],
           "excludeMatches": [
             "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
-            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
-            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+            "@[visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"||text=\"立即抢购\"][visibleToUser=true]"
           ]
         },
         {
@@ -117,12 +114,13 @@ export default defineGkdApp({
           ],
           "excludeMatches": [
             "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
-            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
-            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+            "@[visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"||text=\"立即抢购\"][visibleToUser=true]"
           ]
         },
         {
-          "matches": "RelativeLayout >n * > [desc^=\"关闭\" && !(id*=\"egg\")][clickable=true][visibleToUser=true]",
+          "matches": [
+            "RelativeLayout >n * > [desc=\"关闭浮层\"||desc=\"关闭浮层icon\"||desc^=\"关闭广告\"||desc^=\"关闭浮层\"][clickable=true][visibleToUser=true]"
+          ],
           "key": 4,
           "name": "首页贴边广告",
           "snapshotUrls": [
@@ -135,8 +133,7 @@ export default defineGkdApp({
           "excludeSnapshotUrls": "https://i.gkd.li/i/15077913",
           "excludeMatches": [
             "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
-            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
-            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+            "@[visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"||text=\"立即抢购\"][visibleToUser=true]"
           ]
         },
         {
@@ -150,8 +147,7 @@ export default defineGkdApp({
           ],
           "excludeMatches": [
             "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
-            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
-            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+            "@[visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"||text=\"立即抢购\"][visibleToUser=true]"
           ]
         },
         {
@@ -168,8 +164,7 @@ export default defineGkdApp({
           ],
           "excludeMatches": [
             "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
-            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
-            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+            "@[visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"||text=\"立即抢购\"][visibleToUser=true]"
           ]
         }
       ]
