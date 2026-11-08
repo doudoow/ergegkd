@@ -150,7 +150,13 @@ export default defineGkdApp({
             "https://i.gkd.li/i/15587119",
             "https://i.gkd.li/i/20768037"
           ],
-          "name": "点击信息流广告卡片右上角关闭"
+          "name": "点击信息流广告卡片右上角关闭",
+          "excludeMatches": [
+            "[text=\"存草稿\"][visibleToUser=true]",
+            "[text=\"取消\"][visibleToUser=true] + [text=\"发布\"][visibleToUser=true]",
+            "[text=\"添加话题\"||text=\"添加图片\"||text=\"添加位置\"||text=\"添加投票\"][visibleToUser=true]",
+            "[text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
+          ]
         },
         {
           "anyMatches": [
@@ -284,10 +290,14 @@ export default defineGkdApp({
       "key": 6,
       "rules": [
         {
-          "matches": "[id=\"com.coolapk.market:id/close_view\"]",
+          "matches": "[id=\"com.coolapk.market:id/ad_time_view\"||id=\"com.coolapk.market:id/top_text_view\"||id=\"com.coolapk.market:id/ad_text_view\"] +n [id=\"com.coolapk.market:id/close_view\"]",
           "excludeMatches": [
             "[text=\"回复\"] + [text=\"发布\"]",
-            "[text=\"创建收藏单\"][visibleToUser=true]"
+            "[text=\"创建收藏单\"][visibleToUser=true]",
+            "[text=\"存草稿\"][visibleToUser=true]",
+            "[text=\"取消\"][visibleToUser=true] + [text=\"发布\"][visibleToUser=true]",
+            "[text=\"添加话题\"||text=\"添加图片\"||text=\"添加位置\"||text=\"添加投票\"][visibleToUser=true]",
+            "[text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
           ],
           "key": 0,
           "name": "点击右上角x按钮",
@@ -311,6 +321,12 @@ export default defineGkdApp({
           "snapshotUrls": [
             "https://i.gkd.li/i/14959519",
             "https://i.gkd.li/i/14964859"
+          ],
+          "excludeMatches": [
+            "[text=\"存草稿\"][visibleToUser=true]",
+            "[text=\"取消\"][visibleToUser=true] + [text=\"发布\"][visibleToUser=true]",
+            "[text=\"添加话题\"||text=\"添加图片\"||text=\"添加位置\"||text=\"添加投票\"][visibleToUser=true]",
+            "[text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
           ]
         },
         {
@@ -326,10 +342,16 @@ export default defineGkdApp({
             "https://i.gkd.li/i/12655713",
             "https://i.gkd.li/i/12660759",
             "https://i.gkd.li/i/12706437"
+          ],
+          "excludeMatches": [
+            "[text=\"存草稿\"][visibleToUser=true]",
+            "[text=\"取消\"][visibleToUser=true] + [text=\"发布\"][visibleToUser=true]",
+            "[text=\"添加话题\"||text=\"添加图片\"||text=\"添加位置\"||text=\"添加投票\"][visibleToUser=true]",
+            "[text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
           ]
         },
         {
-          "matches": "TextView[text!=\"编辑\"] + [vid=\"close_view\"][childCount=0]",
+          "matches": "[id=\"com.coolapk.market:id/ad_time_view\"||id=\"com.coolapk.market:id/top_text_view\"||id=\"com.coolapk.market:id/ad_text_view\"] +n [id=\"com.coolapk.market:id/close_view\"][childCount=0]",
           "key": 3,
           "name": "点击右上角x按钮",
           "snapshotUrls": [
@@ -351,6 +373,12 @@ export default defineGkdApp({
             "https://i.gkd.li/i/15159886",
             "https://i.gkd.li/i/15587119",
             "https://i.gkd.li/i/20768037"
+          ],
+          "excludeMatches": [
+            "[text=\"存草稿\"][visibleToUser=true]",
+            "[text=\"取消\"][visibleToUser=true] + [text=\"发布\"][visibleToUser=true]",
+            "[text=\"添加话题\"||text=\"添加图片\"||text=\"添加位置\"||text=\"添加投票\"][visibleToUser=true]",
+            "[text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
           ]
         },
         {
@@ -373,6 +401,12 @@ export default defineGkdApp({
             "https://i.gkd.li/i/14549551",
             "https://i.gkd.li/i/21693916",
             "https://i.gkd.li/i/23046625"
+          ],
+          "excludeMatches": [
+            "[text=\"存草稿\"][visibleToUser=true]",
+            "[text=\"取消\"][visibleToUser=true] + [text=\"发布\"][visibleToUser=true]",
+            "[text=\"添加话题\"||text=\"添加图片\"||text=\"添加位置\"||text=\"添加投票\"][visibleToUser=true]",
+            "[text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
           ]
         },
         {
@@ -398,6 +432,12 @@ export default defineGkdApp({
             "https://i.gkd.li/i/19643262",
             "https://i.gkd.li/i/19534649",
             "https://i.gkd.li/i/20776872"
+          ],
+          "excludeMatches": [
+            "[text=\"存草稿\"][visibleToUser=true]",
+            "[text=\"取消\"][visibleToUser=true] + [text=\"发布\"][visibleToUser=true]",
+            "[text=\"添加话题\"||text=\"添加图片\"||text=\"添加位置\"||text=\"添加投票\"][visibleToUser=true]",
+            "[text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
           ]
         }
       ]
@@ -516,6 +556,12 @@ export default defineGkdApp({
             "https://i.gkd.li/import/12642148",
             "https://i.gkd.li/import/12774771",
             "https://i.gkd.li/import/13257987"
+          ],
+          "excludeMatches": [
+            "[text=\"存草稿\"][visibleToUser=true]",
+            "[text=\"取消\"][visibleToUser=true] + [text=\"发布\"][visibleToUser=true]",
+            "[text=\"添加话题\"||text=\"添加图片\"||text=\"添加位置\"||text=\"添加投票\"][visibleToUser=true]",
+            "[text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
           ]
         },
         {
@@ -581,6 +627,12 @@ export default defineGkdApp({
             "https://i.gkd.li/import/12642148",
             "https://i.gkd.li/import/12774771",
             "https://i.gkd.li/import/13257987"
+          ],
+          "excludeMatches": [
+            "[text=\"存草稿\"][visibleToUser=true]",
+            "[text=\"取消\"][visibleToUser=true] + [text=\"发布\"][visibleToUser=true]",
+            "[text=\"添加话题\"||text=\"添加图片\"||text=\"添加位置\"||text=\"添加投票\"][visibleToUser=true]",
+            "[text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
           ]
         },
         {
