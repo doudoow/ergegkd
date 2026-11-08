@@ -134,7 +134,7 @@ export default defineGkdApp({
       "key": 1,
       "rules": [
         {
-          "matches": "@[vid=\"close_view\"] <<n [vid=\"coolapk_card_view\"][visibleToUser=true]",
+          "matches": "@[vid=\"close_view\"] <<n [vid=\"coolapk_card_view\"] >n [vid=\"ad_time_view\"||vid=\"top_text_view\"||vid=\"ad_text_view\"]",
           "key": 0,
           "snapshotUrls": [
             "https://i.gkd.li/i/19004644",
@@ -150,9 +150,7 @@ export default defineGkdApp({
             "https://i.gkd.li/i/15587119",
             "https://i.gkd.li/i/20768037"
           ],
-          "excludeMatches": [
-            "@[vid=\"close_view\"] <<n [vid=\"coolapk_card_view\"] >n [text=\"跑分\"||text=\"样张\"||text=\"续航\"][visibleToUser=true]"
-          ]
+          "name": "点击信息流广告卡片右上角关闭"
         },
         {
           "anyMatches": [
