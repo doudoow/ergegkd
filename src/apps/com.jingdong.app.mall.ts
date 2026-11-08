@@ -56,7 +56,7 @@ export default defineGkdApp({
     },
     {
       "name": "局部广告-悬浮广告",
-      "desc": "关闭首页悬浮广告、参与调研提示、红包弹窗和购物车砸金蛋",
+      "desc": "关闭首页悬浮广告、参与调研提示、红包弹窗和购物车砸金蛋（已排除商品规格/款式选择面板）",
       "enable": false,
       "key": 2,
       "rules": [
@@ -67,12 +67,22 @@ export default defineGkdApp({
             "https://i.gkd.li/i/12642270",
             "https://i.gkd.li/i/12774910"
           ],
-          "excludeSnapshotUrls": "https://i.gkd.li/i/15110548"
+          "excludeSnapshotUrls": "https://i.gkd.li/i/15110548",
+          "excludeMatches": [
+            "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
+            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
+            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+          ]
         },
         {
           "matches": "@ImageView[id!=null] + FrameLayout[childCount=3] > ImageView + LinearLayout + TextView",
           "key": 1,
-          "snapshotUrls": "https://i.gkd.li/i/13242002"
+          "snapshotUrls": "https://i.gkd.li/i/13242002",
+          "excludeMatches": [
+            "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
+            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
+            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+          ]
         },
         {
           "matches": "[desc=\"关闭浮层icon\"][clickable=true][visibleToUser=true]",
@@ -83,6 +93,11 @@ export default defineGkdApp({
             "https://i.gkd.li/i/13072091",
             "https://i.gkd.li/i/12837870",
             "https://i.gkd.li/i/15077913"
+          ],
+          "excludeMatches": [
+            "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
+            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
+            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
           ]
         },
         {
@@ -99,6 +114,11 @@ export default defineGkdApp({
           "excludeSnapshotUrls": [
             "https://i.gkd.li/import/12774910",
             "https://i.gkd.li/i/15110548"
+          ],
+          "excludeMatches": [
+            "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
+            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
+            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
           ]
         },
         {
@@ -112,7 +132,12 @@ export default defineGkdApp({
             "https://i.gkd.li/import/12837870",
             "https://i.gkd.li/i/17690650"
           ],
-          "excludeSnapshotUrls": "https://i.gkd.li/i/15077913"
+          "excludeSnapshotUrls": "https://i.gkd.li/i/15077913",
+          "excludeMatches": [
+            "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
+            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
+            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
+          ]
         },
         {
           "matches": "[id=\"com.jd.lib.cart.feature:id/iv_egg_close\"]",
@@ -122,6 +147,11 @@ export default defineGkdApp({
           "snapshotUrls": [
             "https://i.gkd.li/import/12642266",
             "https://i.gkd.li/i/14731003"
+          ],
+          "excludeMatches": [
+            "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
+            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
+            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
           ]
         },
         {
@@ -135,6 +165,11 @@ export default defineGkdApp({
           ],
           "excludeSnapshotUrls": [
             "https://i.gkd.li/i/21343338"
+          ],
+          "excludeMatches": [
+            "@[visibleToUser=true] <<n * > [text*=\"已选\"][visibleToUser=true]",
+            "@[visibleToUser=true] <<n * > [text=\"款式\"||text=\"尺码\"||text=\"规格\"||text=\"颜色分类\"||text=\"库存\"][visibleToUser=true]",
+            "[text*=\"已选\"][visibleToUser=true] <<n * > [text=\"加入购物车\"||text=\"立即购买\"][visibleToUser=true]"
           ]
         }
       ]
