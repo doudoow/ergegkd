@@ -160,7 +160,7 @@ export default defineGkdApp({
           ],
           "fastQuery": true,
           "key": 10,
-          "name": "点击[關閉此廣告]",
+          "name": "点击[关闭此广告]",
           "snapshotUrls": "https://i.gkd.li/i/13791202"
         },
         {
@@ -2594,8 +2594,8 @@ export default defineGkdApp({
       ]
     },
     {
-      "name": "分段广告-朋友圈广告[繁体]",
-      "desc": "点击广告卡片右上角[廣告],出现菜单点击[關閉此廣告],确认关闭",
+      "name": "分段广告-朋友圈广告-繁体版",
+      "desc": "繁体界面朋友圈广告：点广告卡片右上角[广告]，浮层里点[关闭此广告]",
       "enable": false,
       "fastQuery": true,
       "quickFind": true,
@@ -2604,14 +2604,14 @@ export default defineGkdApp({
         {
           "matches": "ImageView - TextView[text=\"廣告\"][clickable=true][id!=null]",
           "key": 0,
-          "name": "点击广告卡片右上角[廣告]",
+          "name": "点击广告卡片右上角[广告]",
           "snapshotUrls": "https://i.gkd.li/import/13791200"
         },
         {
           "matches": "RelativeLayout[childCount=6] > TextView[text=\"關閉此廣告\"]",
           "preKeys": 0,
           "key": 1,
-          "name": "点击[關閉此廣告]",
+          "name": "点击[关闭此广告]",
           "snapshotUrls": "https://i.gkd.li/import/13791202"
         }
       ]
@@ -2755,43 +2755,48 @@ export default defineGkdApp({
       "key": 69,
       "name": "分段广告-朋友圈广告-关闭浮层",
       "enable": true,
-      "desc": "朋友圈广告：点[关闭该广告] -> 点[直接关闭]，只处理浮层按钮，不点击广告卡片本身",
+      "desc": "朋友圈广告浮层：点[关闭该广告] -> 点[直接关闭]。只点浮层按钮，不点广告卡片本身",
       "rules": [
         {
           "key": 0,
           "name": "点[关闭该广告]",
+          "matches": "[text=\"关闭该广告\"||text=\"關閉該廣告\"||text=\"关闭此广告\"||text=\"關閉此廣告\"][visibleToUser=true]",
           "action": "clickCenter",
-          "actionDelay": 400,
-          "matches": "[text=\"关闭该广告\"][visibleToUser=true]"
+          "actionDelay": 120,
+          "actionMaximum": 2
         },
         {
           "key": 1,
           "name": "点[直接关闭]",
-          "action": "click",
-          "actionDelay": 600,
           "anyMatches": [
-            "[text=\"直接关闭\"][visibleToUser=true]",
-            "[text=\"关闭该广告的原因\"] +(2) [text=\"直接关闭\"]",
-            "[text=\"关闭该广告的原因\"] -(2) [text=\"直接关闭\"]",
-            "@[clickable=true] > [text=\"直接关闭\"]"
-          ]
+            "[text=\"直接关闭\"||text=\"直接關閉\"][visibleToUser=true]",
+            "[text=\"关闭该广告的原因\"||text=\"關閉該廣告的原因\"] +(2) [text=\"直接关闭\"||text=\"直接關閉\"]",
+            "[text=\"关闭该广告的原因\"||text=\"關閉該廣告的原因\"] -(2) [text=\"直接关闭\"||text=\"直接關閉\"]",
+            "@[clickable=true] > [text=\"直接关闭\"||text=\"直接關閉\"]"
+          ],
+          "action": "click",
+          "actionDelay": 400,
+          "actionMaximum": 2
         },
         {
           "key": 2,
           "name": "点[关闭广告]",
+          "matches": "[text=\"关闭广告\"||text=\"關閉廣告\"][visibleToUser=true][clickable=true]",
           "action": "clickCenter",
-          "actionDelay": 400,
-          "matches": "[text=\"关闭广告\"||text=\"Close\"][visibleToUser=true][clickable=true]"
+          "actionDelay": 120,
+          "actionMaximum": 2
         },
         {
           "key": 3,
-          "name": "点[广告-关闭x]",
+          "name": "点[广告旁的关闭]",
+          "matches": "TextView[text=\"广告\"||text=\"廣告\"][clickable=true] <2 * > [text=\"关闭\"||text=\"關閉\"][visibleToUser=true]",
           "action": "clickCenter",
-          "actionDelay": 400,
-          "matches": "TextView[text=\"广告\"][clickable=true] <2 * > [text=\"关闭\"][visibleToUser=true]"
+          "actionDelay": 120,
+          "actionMaximum": 2
         }
       ],
-      "actionDelay": 600
+      "actionCd": 300,
+      "fastQuery": true
     }
   ]
 });
