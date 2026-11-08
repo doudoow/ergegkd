@@ -2760,43 +2760,44 @@ export default defineGkdApp({
         {
           "key": 0,
           "name": "点[关闭该广告]",
-          "matches": "[text=\"关闭该广告\"||text=\"關閉該廣告\"||text=\"关闭此广告\"||text=\"關閉此廣告\"][visibleToUser=true]",
+          "matches": [
+            "[text$=\"关闭该广告\"||text$=\"關閉該廣告\"][visibleToUser=true]",
+            "[desc$=\"关闭该广告\"||desc$=\"關閉該廣告\"][visibleToUser=true]"
+          ],
           "action": "clickCenter",
-          "actionDelay": 120,
-          "actionMaximum": 2
+          "actionDelay": 150
         },
         {
           "key": 1,
           "name": "点[直接关闭]",
           "anyMatches": [
-            "[text=\"直接关闭\"||text=\"直接關閉\"][visibleToUser=true]",
-            "[text=\"关闭该广告的原因\"||text=\"關閉該廣告的原因\"] +(2) [text=\"直接关闭\"||text=\"直接關閉\"]",
-            "[text=\"关闭该广告的原因\"||text=\"關閉該廣告的原因\"] -(2) [text=\"直接关闭\"||text=\"直接關閉\"]",
-            "@[clickable=true] > [text=\"直接关闭\"||text=\"直接關閉\"]"
+            "[text*=\"直接关闭\"||text*=\"直接關閉\"][visibleToUser=true]",
+            "[desc*=\"直接关闭\"||desc*=\"直接關閉\"][visibleToUser=true]",
+            "[text$=\"直接关闭\"||text$=\"直接關閉\"][visibleToUser=true]",
+            "[text*=\"关闭该广告的原因\"] <n * > [text*=\"直接关闭\"]",
+            "[text*=\"关闭该广告的原因\"] +(2) [text*=\"直接关闭\"]",
+            "@[clickable=true] > [text*=\"直接关闭\"]"
           ],
-          "action": "click",
-          "actionDelay": 400,
-          "actionMaximum": 2
+          "action": "clickCenter",
+          "actionDelay": 700
         },
         {
           "key": 2,
           "name": "点[关闭广告]",
           "matches": "[text=\"关闭广告\"||text=\"關閉廣告\"][visibleToUser=true][clickable=true]",
           "action": "clickCenter",
-          "actionDelay": 120,
-          "actionMaximum": 2
+          "actionDelay": 150
         },
         {
           "key": 3,
           "name": "点[广告旁的关闭]",
           "matches": "TextView[text=\"广告\"||text=\"廣告\"][clickable=true] <2 * > [text=\"关闭\"||text=\"關閉\"][visibleToUser=true]",
           "action": "clickCenter",
-          "actionDelay": 120,
-          "actionMaximum": 2
+          "actionDelay": 150
         }
       ],
-      "actionCd": 300,
-      "fastQuery": true
+      "actionCd": 200,
+      "resetMatch": "match"
     }
   ]
 });
